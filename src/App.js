@@ -1,14 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Navbar from "./navbar";
-import GetItems from "./topTracks";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+} from "react-router-dom";
+import SpotifyLogin from "./spotifyLogin";
+import Callback from "./callBack";
+import Example from "./navbar";
+import fetchPlaylists from "./fetchPlaylists";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <GetItems />
-    </div>
+    <>
+      <SpotifyLogin />
+
+      <fetchPlaylists accessToken="accessToken" />
+    </>
   );
 }
 
